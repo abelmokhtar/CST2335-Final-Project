@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".DashboardActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -17,10 +18,12 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
+            android:layout_height="?actionBarSize"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:background="#635E5E"
+            app:title="NASA"
+            app:titleTextColor="@color/white"
+            android:visibility="visible"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
 

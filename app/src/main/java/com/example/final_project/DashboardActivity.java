@@ -29,10 +29,25 @@ public class DashboardActivity extends AppCompatActivity {
         // assigning ID of the toolbar to a variable
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+        MenuInflater menuInflater = getMenuInflater();
+
         // using toolbar as ActionBar
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        //creating an object of the MenuInflater to inflate the menu
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.nav_menu, menu);
+       //  menuInflater.inflate(R.menu.toolbar_menu, menu);
+
+
+        return true;
     }
 
 }
