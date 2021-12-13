@@ -2,6 +2,7 @@ package com.example.final_project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -57,6 +58,12 @@ public class DashboardActivity extends AppCompatActivity {
             //handle item1 click event
             case R.id.search:
                 Toast.makeText(this, "you clicked on Search", Toast.LENGTH_SHORT).show();
+                return true;
+
+            case R.id.settings:
+                Toast.makeText(this, "you clicked on Settings", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(DashboardActivity.this, SettingsActivity.class);
+                startActivity(intent);
                 return true;
 
             //handle item2 click event
