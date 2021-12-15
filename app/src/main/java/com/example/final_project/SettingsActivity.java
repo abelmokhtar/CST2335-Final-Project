@@ -26,5 +26,7 @@ public class SettingsActivity extends AppCompatActivity {
         listView.setDivider(new GradientDrawable(GradientDrawable.Orientation.RIGHT_LEFT, colors));
         listView.setDividerHeight(1);
         listView.setAdapter(adapter);
+
     }
+
 }
