@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/black"
+tools:context=".SearchActivity">
+
+<com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/appBarLayout"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="298dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+</com.google.android.material.appbar.AppBarLayout>
 
     <DatePicker
         android:id="@+id/searchDate"
-        android:layout_width="match_parent"
-        android:layout_height="443dp"
+        android:layout_width="337dp"
+        android:layout_height="258dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="false"
-        android:layout_marginBottom="197dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="213dp"
         android:datePickerMode="spinner" />
 
     <Button
@@ -22,9 +36,24 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="81dp"
-        android:layout_marginBottom="91dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="78dp"
         android:text="SUBMIT"
         android:textSize="20sp"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="526dp"
+        android:background="#635E5E"
+        android:visibility="visible"
+        app:title="SEARCH"
+        app:titleTextColor="@color/white"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
 </RelativeLayout>
+
