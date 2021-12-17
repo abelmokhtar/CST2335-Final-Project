@@ -7,4 +7,18 @@
 
         <string name="action_settings">Settings</string>
 
+    <string name="settingsDialog">SettingsDialog</string>
+    <string name="settingsMessage">Welcome to the settings. Touch on any option in order to reveal information about it. Use the android back key to return to previous page.</string>
+    <string name="settingsTitle">Settings Help</string>
+
+    <string name="searchDialog">SearchDialog</string>
+    <string name="searchMessage">Welcome to the search. Scroll the date picker to your desired setting and click submit and you will be redirected to the dashboard with the image from said date.</string>
+    <string name="searchTitle">Search Help</string>
+
+    <string name="dashboardDialog">SettingsDialog</string>
+    <string name="dashboardMessage">Welcome to the dashboard. This screen is simply for viewing the image and its explanation.
+        Touch the navigation menu in the top-right corner to traverse through the application.</string>
+    <string name="dashboardTitle">Dashboard Help</string>
+
+
 </resources>

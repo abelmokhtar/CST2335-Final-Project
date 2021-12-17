@@ -21,7 +21,7 @@ tools:context=".SettingsActivity">
     <ListView
         android:id="@+id/settings"
         android:layout_width="match_parent"
-        android:layout_height="630dp"
+        android:layout_height="486dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="2dp"></ListView>
 
@@ -30,7 +30,7 @@ tools:context=".SettingsActivity">
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="639dp"
+        android:layout_marginBottom="507dp"
         android:background="#635E5E"
         android:visibility="visible"
         app:title="SETTINGS"
@@ -39,24 +39,4 @@ tools:context=".SettingsActivity">
         tools:layout_editor_absoluteY="0dp" />
 
 </RelativeLayout>
-    <!--<?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black"
-        tools:context=".SettingsActivity">
-
-
-        <ListView
-            android:id="@+id/settings"
-            android:layout_width="match_parent"
-            android:layout_height="630dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="4dp">
-
-        </ListView>
-    </RelativeLayout>-->
-
 

@@ -1,5 +1,7 @@
 package com.example.final_project;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +20,7 @@ public class SearchActivity extends AppCompatActivity {
 
     DatePicker simpleDatePicker;
     Button submit;
+    AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,21 @@ public class SearchActivity extends AppCompatActivity {
             case R.id.logout:
                 setResult(500);
                 finish();
+                return true;
+
+            case R.id.help:
+                builder = new AlertDialog.Builder(this);
+                builder.setMessage(R.string.searchMessage).setTitle(R.string.searchTitle)
+                        .setCancelable(false)
+                        .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                //Creating dialog box
+                AlertDialog alert = builder.create();
+                alert.show();
+
                 return true;
 
             default:

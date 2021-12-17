@@ -1,10 +1,13 @@
 package com.example.final_project;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Base64;
@@ -12,7 +15,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,11 +51,17 @@ public class DashboardActivity extends AppCompatActivity {
     Toolbar tb;
     ProgressDialog pd;
     TextView txtJson;
+    AlertDialog.Builder builder;
+    ProgressBar progressBar;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         txtJson = (TextView) findViewById(R.id.jsonView);
+
+        progressBar = findViewById(R.id.progressBar);
+        progressBar.getProgressDrawable().setColorFilter(
+                Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
 
         // assigning ID of the toolbar to a variable
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -79,17 +90,36 @@ public class DashboardActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             //handle item1 click event
-            case R.id.search:
+            case R.id.search: {
                 Toast.makeText(this, "you clicked on Search", Toast.LENGTH_SHORT).show();
                 Intent searchIntent = new Intent(DashboardActivity.this, SearchActivity.class);
                 startActivity(searchIntent);
                 return true;
-
-            case R.id.settings:
+            }
+            case R.id.settings: {
                 Toast.makeText(this, "you clicked on Settings", Toast.LENGTH_SHORT).show();
                 Intent settingsIntent = new Intent(DashboardActivity.this, SettingsActivity.class);
                 startActivity(settingsIntent);
                 return true;
+            }
+            case R.id.help:
+                builder = new AlertDialog.Builder(this);
+                builder.setMessage(R.string.dashboardMessage).setTitle(R.string.dashboardTitle)
+                        .setCancelable(false)
+                        .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                //  Action for 'NO' Button
+                                dialog.cancel();
+                                Toast.makeText(getApplicationContext(), "you choose no action for alertbox",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                //Creating dialog box
+                AlertDialog alert = builder.create();
+                alert.show();
+
+
+            return true;
 
             //handle item2 click event
             case R.id.logout:
@@ -138,7 +168,7 @@ public class DashboardActivity extends AppCompatActivity {
                 while ((line = reader.readLine()) != null) {
                     buffer.append(line+"\n");
                     Log.d("Response: ", "> " + line);   //here u ll get whole response...... :-)
-
+                    progressBar.setProgress(50);
                 }
 
                 return buffer.toString();
@@ -225,6 +255,7 @@ public class DashboardActivity extends AppCompatActivity {
                 if (inputStream != null) {
 
                     Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                    progressBar.setProgress(100);
                     return bitmap;
                 }
             } catch (Exception e) {
@@ -248,6 +279,7 @@ public class DashboardActivity extends AppCompatActivity {
                 Bitmap b=BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
                 ImageView iv = findViewById(R.id.nasaImage);
                 iv.setImageBitmap(b);
+                progressBar.setVisibility(View.GONE);
 
             } catch(Exception e) {
                 e.getMessage();
