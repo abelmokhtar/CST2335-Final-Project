@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Final-Project</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="action_settings">Réglages</string>
+
+    <string name="settingsDialog">Boîte de dialogue Paramètres</string>
+    <string name="settingsMessage">Bienvenue dans les paramètres. Appuyez sur n importe quelle option afin de révéler des informations à son sujet. Utilisez la touche retour android pour revenir à la page précédente.</string>
+    <string name="favouritesMessage">Bienvenue dans l onglet favoris. Tapez une note ou une date pour vos images préférées afin que vous puissiez vous en souvenir et les rechercher plus tard, puis appuyez sur Soumettre.</string>
+
+    <string name="settingsTitle">Aide sur les paramètres</string>
+
+    <string name="searchDialog">Recherche Dialogue</string>
+    <string name="aboutApp">À propos de cette application</string>
+    <string name="support">Soutenir le développeur</string>
+    <string name="updates">Vérifier les mises à jour</string>
+    <string name="searchMessage">Bienvenue dans la recherche. Faites défiler le sélecteur de date jusqu au paramètre souhaité et cliquez sur soumettre et vous serez redirigé vers le tableau de bord avec l image de ladite date.</string>
+    <string name="searchTitle">Aide à la recherche</string>
+
+    <string name="dashboardDialog">Boîte de dialogue Paramètres</string>
+    <string name="dashboardMessage">Bienvenue sur le tableau de bord. Cet écran sert simplement à visualiser l image et son explication. Touchez le menu de navigation dans le coin supérieur droit pour parcourir l application.</string>
+    <string name="dashboardTitle">Aide du tableau de bord</string>
+
+
+</resources>

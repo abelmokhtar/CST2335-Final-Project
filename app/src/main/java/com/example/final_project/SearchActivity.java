@@ -35,12 +35,17 @@ public class SearchActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         // perform click event on submit button
         submit.setOnClickListener(v -> {
-            // get the values for day of month , month and year from a date picker
-            String day = "Day = " + simpleDatePicker.getDayOfMonth();
-            String month = "Month = " + (simpleDatePicker.getMonth() + 1);
-            String year = "Year = " + simpleDatePicker.getYear();
-            // display the values by using a toast
-            Toast.makeText(getApplicationContext(), day + "\n" + month + "\n" + year, Toast.LENGTH_LONG).show();
+            // get the values for day of month , month and year from a date picker.
+            int day = simpleDatePicker.getDayOfMonth();
+            int month = (simpleDatePicker.getMonth() + 1);
+            int year = simpleDatePicker.getYear();
+            // send values back to DashboardActivity.
+            Intent intent = new Intent();
+            intent.putExtra("day", day);
+            intent.putExtra("month", month);
+            intent.putExtra("year", year);
+            setResult(1, intent);
+            finish();
         });
 
     }
@@ -77,8 +82,16 @@ public class SearchActivity extends AppCompatActivity {
             //handle item2 click event
             case R.id.logout:
                 setResult(500);
-                finish();
+                Intent logout = new Intent(SearchActivity.this,MainActivity.class);
+                startActivity(logout);
                 return true;
+
+            case R.id.favourites: {
+                Toast.makeText(this, "you clicked on Favourites", Toast.LENGTH_SHORT).show();
+                Intent favouritesIntent = new Intent(SearchActivity.this, FavouritesActivity.class);
+                startActivity(favouritesIntent);
+                return true;
+            }
 
             case R.id.help:
                 builder = new AlertDialog.Builder(this);

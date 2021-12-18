@@ -50,7 +50,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 if(v.getText().equals("About this Application")){
                     builder = new AlertDialog.Builder(SettingsActivity.this);
-                    builder.setMessage("This application fetches NASA's daily image, as well as the explanation for said image. Enjoy!").setTitle(R.string.settingsTitle)
+                    builder.setMessage("This application fetches NASA's daily image, as well as the explanation for said image. Enjoy!").setTitle(R.string.aboutApp)
                             .setCancelable(false)
                             .setNegativeButton("OK", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
@@ -66,7 +66,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 else if(v.getText().equals("Check for Updates")){
                     builder = new AlertDialog.Builder(SettingsActivity.this);
-                    builder.setMessage("You are up to date! Try again in the future.").setTitle(R.string.settingsTitle)
+                    builder.setMessage("You are up to date! Try again in the future.").setTitle(R.string.updates)
                             .setCancelable(false)
                             .setNegativeButton("OK", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
@@ -82,7 +82,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 else if(v.getText().equals("Support the Developer")){
                     builder = new AlertDialog.Builder(SettingsActivity.this);
-                    builder.setMessage("Thanks for choosing to support this project, your bonus marks are highly appreciated!").setTitle(R.string.settingsTitle)
+                    builder.setMessage("Thanks for choosing to support this project, your bonus marks are highly appreciated!").setTitle(R.string.support)
                             .setCancelable(false)
                             .setNegativeButton("OK", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
@@ -136,8 +136,15 @@ public class SettingsActivity extends AppCompatActivity {
             //handle item2 click event
             case R.id.logout:
                 setResult(500);
-                finish();
+                Intent logout = new Intent(SettingsActivity.this,MainActivity.class);
+                startActivity(logout);
                 return true;
+            case R.id.favourites: {
+                Toast.makeText(this, "you clicked on Favourites", Toast.LENGTH_SHORT).show();
+                Intent favouritesIntent = new Intent(SettingsActivity.this, FavouritesActivity.class);
+                startActivity(favouritesIntent);
+                return true;
+            }
 
             case R.id.help:
                 builder = new AlertDialog.Builder(this);

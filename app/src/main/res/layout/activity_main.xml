@@ -58,33 +58,32 @@
     <EditText
         android:id="@+id/username"
         android:layout_width="242dp"
-        android:layout_height="41dp"
+        android:layout_height="48dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="58dp"
-        android:layout_marginBottom="305dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="290dp"
         android:background="@drawable/border"
         android:ems="10"
         android:hint="  Username:"
         android:inputType="textPersonName"
-        android:textColorHint="#635E5E"
         android:textColor="@color/white"
-        />
+        android:textColorHint="#635E5E" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="242dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="58dp"
-        android:layout_marginBottom="259dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="241dp"
         android:background="@drawable/border"
         android:ems="10"
         android:hint="  Password:"
         android:inputType="textPassword"
-        android:textColorHint="#635E5E"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textColorHint="#635E5E" />
 
     <Button
         android:id="@+id/loginButton"
@@ -93,9 +92,43 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="134dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="153dp"
+        android:onClick="startProfile"
         android:text="LOGIN"
-        android:theme="@style/Theme.Design"
-        android:onClick="startProfile"/>
+        android:theme="@style/Theme.Design" />
+
+    <RadioGroup
+        android:layout_width="315dp"
+        android:layout_height="128dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="13dp"
+        android:id="@+id/toggle">
+
+        <RadioButton
+            android:id="@+id/french"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="128dp"
+            android:layout_marginBottom="43dp"
+            android:buttonTint="#FFFFFF"
+            android:minHeight="48dp"
+            android:text="French"
+            android:textColor="@color/white"
+            tools:visibility="visible" />
+
+        <RadioButton
+            android:id="@+id/english"
+            android:layout_width="242dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="127dp"
+            android:layout_marginBottom="91dp"
+            android:buttonTint="#FFFFFF"
+            android:minHeight="48dp"
+            android:text="English"
+            android:textColor="@color/white"
+            tools:visibility="visible" />
+    </RadioGroup>
 
 </RelativeLayout>

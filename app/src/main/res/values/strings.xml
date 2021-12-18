@@ -9,9 +9,14 @@
 
     <string name="settingsDialog">SettingsDialog</string>
     <string name="settingsMessage">Welcome to the settings. Touch on any option in order to reveal information about it. Use the android back key to return to previous page.</string>
+    <string name="favouritesMessage">Welcome to the favourites tab. Type a note or date for your favourite images so you can remember and search for them later, Then press submit..</string>
+
     <string name="settingsTitle">Settings Help</string>
 
     <string name="searchDialog">SearchDialog</string>
+    <string name="aboutApp">About this Application</string>
+    <string name="support">Support the Developer</string>
+    <string name="updates">Check for Updates</string>
     <string name="searchMessage">Welcome to the search. Scroll the date picker to your desired setting and click submit and you will be redirected to the dashboard with the image from said date.</string>
     <string name="searchTitle">Search Help</string>
 
